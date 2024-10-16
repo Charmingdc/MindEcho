@@ -180,8 +180,7 @@ aside {
  position: fixed;
  top: 0;
  bottom: 0;
- /*display: flex;*/
- display: none;
+ display: flex;
  flex-direction: column;
  align-items: center;
  justify-content: center;
