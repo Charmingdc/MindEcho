@@ -1,0 +1,76 @@
+Here’s the updated overview with the revised terminology:
+
+---
+
+### 1. Default (Home) Page  
+The starting point where users are welcomed and prompted to log their mood or quickly access **Relaxation Tracks** for instant relaxation.
+
+#### Features:
+- Welcome Message: A warm greeting or introductory message.
+- Daily Motivational Quote: A general, mood-neutral quote if the user hasn’t logged their mood for the day
+- Call to Action: A prompt for users to log their mood.
+- Mood Log Button: A button leading to the merged mood input and personalized quote section..
+- Relaxation Tracks Button: Quick access to a playlist of soothing sounds or relaxation tracks for immediate relaxation.
+- Navigation Links: Easy access to other sections like Mood History, Insights, and Resources.
+
+---
+
+### 2. AI Chat Page  
+This page allows users to chat with the AI mental coach using either text or voice, with voice chat being the default option.
+
+#### Features:  
+- AI Chat Interface: A chat interface where users can chat with the AI mental coach.
+- Voice Chat Option: A voice-based interaction with the AI as the primary method, with the option to switch to text.
+
+---
+
+### 3. Mood Input + Personalized Quote + Relaxation Track Page (Merged)  
+This combined page allows users to log their mood and receive a personalized quote, along with a relaxation track that matches their mood.
+
+#### Features:
+- Mood Logging Interface: A mood tracker (emoji picker, slider, or dropdown) where users can log their current mood.
+- Submit Button: A button to log the selected mood.
+- Mood Reflection Message: A personalized message acknowledging the user's mood (e.g., “You’re feeling happy today, here’s a positive quote for you!”).
+- Personalized Quote Display: A quote aligned with the user's logged mood (e.g., uplifting for sad moods, motivational for neutral/happy moods).
+- Mood-Based Relaxation Track: A relaxation track suggested based on the user’s mood (calming for stress, uplifting for happiness, etc.).
+- Play Button: A button to start playing the relaxation track right after logging the mood.
+- Additional Suggestions (Optional): Mood-based self-care tips or resources (e.g., guided meditation for stress or tips for staying positive).
+- Option to Re-log Mood: Users can change their mood and receive a new quote and relaxation track immediately.
+
+---
+
+### 4. Mood History + Mood Insights Page  
+This page provides users with a record of their logged moods, helping them track emotional trends over time and gain insights based on their mood patterns.
+
+#### Features:
+- Mood Log Timeline: A chronological list of past moods, including the date and time they were logged.
+- Visual Mood Chart: Optional graphs or charts to show mood trends over days, weeks, or months.
+- Mood Patterns Insights: Highlights any patterns or recurring moods (e.g., frequent sadness or stress).
+- Delete Mood Logs: Option for users to delete individual mood entries if they wish.
+- Mood Insight: An analysis of logged moods (e.g., “You’ve been feeling stressed a lot lately, here are some relaxation techniques you can try.”).
+- Personalized Tips: Self-care recommendations based on mood patterns (e.g., gratitude exercises, mindfulness, or breathing techniques).
+- External Resources Links: Quick access to external articles, videos, or apps related to mental health and well-being.
+
+---
+
+
+### 5. Resources Page  
+A curated collection of mental health resources to support users, including external links and self-help tools.
+
+#### Features:
+- Categorized Resources: Articles, videos, or guides organized by categories such as “Self-Care,” “Stress Relief,” “Anxiety Support,” etc.
+- Guided Meditation Links: Free meditation or mindfulness sessions (YouTube videos, apps, or written guides).
+- Mental Health Hotlines: A list of support lines or services users can contact for immediate help.
+  
+---
+
+### App Flow:
+1. **Home Page**: Users are greeted and prompted to log their mood or access relaxation tracks.
+2. **AI Chat Page**: A page to chat with the AI using both text and voice.
+3. **Mood Input + Personalized Quote + Relaxation Track Page**: Users log their mood and instantly receive a personalized quote and relaxation track.
+4. **Mood History + Mood Insights Page**: Users can track their mood over time and see trends or patterns.
+5. **Resources Page**: Users explore mental health articles, videos, and support tools.
+
+---
+
+This structure offers a user-friendly experience with key features like mood logging, personalized quotes, insights, and helpful resources all in accessible pages.

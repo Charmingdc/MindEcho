@@ -1,0 +1,67 @@
+:root {
+  --clr: rgb(220, 220, 220);
+  --bg-clr: rgb(16, 16, 16);
+  --sclr: rgb(4, 58, 247);
+}
+
+body {
+ min-height: 100vh;
+ display: flex;
+ justify-content: center;
+ color: var(--clr);
+ font-family: 'Poppins', Sans-Serif;
+ background: var(--bg-clr);
+}
+
+
+    /*** pwa style rules ***/
+#pwa-toast {
+  visibility: hidden;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 16px;
+  padding: 12px;
+  border: 1px solid #8885;
+  border-radius: 4px;
+  z-index: 1;
+  text-align: left;
+  box-shadow: 3px 4px 5px 0 #8885;
+  display: grid;
+}
+#pwa-toast .message {
+  margin-bottom: 8px;
+}
+#pwa-toast .buttons {
+  display: flex;
+}
+#pwa-toast button {
+  border: 1px solid #8885;
+  outline: none;
+  margin-right: 5px;
+  border-radius: 2px;
+  padding: 3px 10px;
+}
+#pwa-toast.show {
+  visibility: visible;
+}
+button #pwa-refresh {
+  display: none;
+}
+#pwa-toast.show.refresh button #pwa-refresh {
+  display: block;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

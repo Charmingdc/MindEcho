@@ -1,0 +1,719 @@
+/** importing styles **/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import './footer.css';
+
+
+
+/** universal style rules **/
+* {
+ padding: 0;
+ margin: 0;
+}
+
+/** css variables for dark mode **/
+.default-mode {
+ --clr: rgb(200, 200, 200);
+ --sclr: rgb(68, 56, 208);
+ --bg: rgb(13, 13, 13);
+ --shade: rgb(18, 18, 18);
+}
+
+body {
+ width: 100vw;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: 'Poppins', Sans-Serif;
+ color: var(--clr);
+ background: var(--bg);
+}
+
+a,
+a:hover,
+a:visited {
+ color: var(--clr);
+ text-decoration-color: none;
+}
+
+main {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+aside {
+ display: none;
+}
+
+/** main content container style rules **/
+.container {
+ width: 100%;
+ min-height: 90vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: var(--bg);
+ margin-bottom: 5rem;
+}
+
+/** style rules for reuseable classes starts here**/
+
+/** style rules for ".box" class name **/
+.box,
+.outline-box {
+ width: 82%;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 4%;
+ background: var(--shade);
+ border-radius: .6rem;
+ margin: .5rem 0;
+}
+
+.outline-box {
+ background: transparent;
+}
+
+.box > p,
+.outline-box > p {
+ align-self: flex-start;
+ font-weight: 400;
+ margin-bottom: 1rem;
+}
+
+.box > h3 {
+ align-self: center;
+ text-align: center;
+ margin: .4rem 0;
+}
+
+.outline-box > p:first-child {
+ font-size: 1.2rem;
+ text-transform: uppercase;
+ margin-left: -5%
+}
+
+.box-icon {
+ align-self: flex-start;
+ height: 3rem;
+ display: flex;
+ align-items: center;
+ margin-bottom: 1rem;
+}
+
+.box-icon svg {
+ fill: var(--clr);
+ transition: 400ms;
+ margin-right: 1.4rem;
+}
+
+.box-icon svg:hover {
+ fill: var(--sclr);
+}
+
+
+/** style rules for ".page-top-bar" class **/
+.page-topbar {
+ width: 90%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 1rem 5%;
+ list-style: none;
+ margin-bottom: 1rem;
+}
+
+.page-topbar > li,
+.page-topbar a {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.page-topbar > li svg {
+ width: 1.4rem;
+ height: 1.4rem;
+}
+
+.page-topbar > li > h2 {
+ color: var(--sclr);
+}
+
+/** style rules for ".btn" class **/
+.btn {
+ width: 90%;
+ height: 3.2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ font-size: .9rem;
+ font-family: 'Poppins', Sans-Serif;
+ text-decoration: none;
+ background-color: var(--sclr);
+ border: 0.1rem solid transparent;
+ border-radius: 2rem;
+ margin: .5rem 0rem;
+}
+
+.btn > svg {
+ margin-right: .6rem;
+}
+
+.subtag {
+ font-size: .8rem;
+ margin-top: -.6rem;
+}
+/** style rules for reusable classes ends here **/
+
+
+
+/** { index page style rules starts here } **/
+#intro-screen {
+ width: 100vw;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ bottom: 0;
+ /*display: flex;*/
+ display: none;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background-color: var(--bg);
+ z-index: 5;
+}
+
+#intro-screen > div {
+ width: 8rem;
+ height: 8rem;
+ background-color: var(--shade);
+ border-radius: 50%;
+ margin-top: -2rem;
+}
+
+#intro-screen > h3 {
+ position: absolute;
+ bottom: 2rem;
+ color: var(--sclr);
+}
+
+#index-profile-detail {
+ width: 90%;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 4% 5%;
+ margin-bottom: 1rem;
+}
+
+#index-profile-detail > ul {
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ list-style: none;
+}
+
+#index-profile-detail > ul > li {
+ display: flex;
+ flex-direction: column;
+}
+
+#index-profile-detail > ul > li > p {
+ font-size: .8rem;
+}
+
+#index-profile-detail > ul > li:last-child > div {
+ width: 3rem;
+ height: 3rem;
+ background: var(--shade);
+ border-radius: 50%;
+}
+
+#daily-affirm {
+ width: 90%;
+ height: auto;
+ min-height: 5rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ padding: 2% 5%;
+ background: var(--bg);
+ border-radius: .6rem;
+}
+
+#affirm-copy {
+ width: 90%;
+ min-height: 2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 2% 5%;
+ background: var(--bg);
+ border-radius: .6rem;
+ margin-top: .6rem;
+}
+
+#daily-music-box {
+ width: 96%;
+ height: 8rem;
+ display: grid;
+ grid-template-rows: 1fr;
+ grid-template-columns: repeat(2, 1fr);
+ grid-gap: .4rem;
+ padding: 2%;
+ background: var(--bg);
+ border-radius: .6rem;
+}
+
+#daily-music-box > div {
+ height: 100%;
+ border-radius: .4rem;
+}
+
+#daily-music-box > div:first-child {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#daily-music-box > div:first-child > img {
+ width: 6.5rem;
+}
+
+#daily-music-box > div:last-child {
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+ white-space: nowrap;  box-sizing: border-box;
+ padding-left: .6rem;
+ background: var(--shade);
+}
+
+#daily-music-box > div:last-child > h4 {
+ display: inline-block;
+ animation: marquee 10s linear infinite;
+}
+    
+#daily-music-box > div:last-child > p {
+ font-weight: bold;
+ margin-top: .4rem;
+}
+
+#daily-music-box > div:last-child > button {
+ position: absolute;
+ bottom: 8%;
+ width: 6.4rem;
+ height: 2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ background: var(--sclr);
+ border: none;
+ border-radius: 1rem;
+}
+
+#daily-music-box > div:last-child > button:hover {
+ animation: elastic 400ms linear;
+}
+
+#daily-music-box > div:last-child > button > svg {
+ margin-right: .4rem;
+}
+
+/** { index page style rules ends here } **/
+
+
+
+
+/** { chatbot page style rules starts here } **/
+#ai-body {
+ width: 92%;
+ height: 80vh;
+ padding: 0 4%;
+ color: var(--clr);
+ background: var(--bg);
+}
+
+#ai-body > section {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+#ai-default-screen {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-top: -1rem;
+}
+
+#ai-default-screen > div {
+ width: 7rem;
+ height: 7rem;
+ background: var(--shade);
+ border-radius: 50%;
+ margin-bottom: .5rem;
+}
+
+#ai-default-screen > h3 {
+ margin: 0.6rem 0rem;
+}
+
+#ai-default-screen > p {
+ font-size: 0.8rem;
+}
+
+#usr-chat-wrap {
+ align-self: flex-end;
+ width: auto;
+ max-width: 80%;
+ height: auto;
+ font-size: .9rem;
+ padding: .6rem;
+ background: var(--sclr);
+ border-radius: 1rem;
+ margin: 1rem 0rem;
+}
+
+#ai-chat-wrap {
+ align-self: flex-start;
+ width: 90%;
+ height: auto;
+ display: flex;
+ align-items: flex-start;
+ justify-content: center;
+ border-radius: 1rem;
+ margin: 1rem 0rem;
+}
+
+#ai-dp {
+ width: 2.4rem;
+ height: 2.4rem;
+ background: var(--shade);
+ border-radius: 50%;
+ margin-right: .8rem;
+}
+
+#ai-chatbox {
+ width: 85%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+#ai-chatbox > #ai-chat {
+ width: 100%;
+ height: auto;
+ font-size: .9rem;
+ margin-bottom: 1.6rem;
+}
+
+.input-container {
+ width: 100%;
+ height: 5rem;
+ position: fixed;
+ bottom: 0%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: var(--bg);
+}
+
+.group {
+  width: 90%;
+  display: flex;
+  line-height: 30px;
+  align-items: center;
+  position: relative;
+}
+
+#prompt-input {
+  width: 100%;
+  height: 2.7rem;
+  padding: 0.5rem 5.6rem 0.5rem 1rem;
+  color: var(--clr);
+  font-family: 'Poppins', Sans-Serif;
+  background-color: var(--shade);
+  border: 0.1rem solid transparent;
+  border-radius: 2rem;
+  transition: .8s ease;
+  margin: 1rem 0rem;
+}
+
+#prompt-input::placeholder {
+  color: var(--clr);
+}
+
+#prompt-input:focus, #prompt-input:hover {
+  outline: none;
+  background-color: var(--bg);
+  border: 0.1rem solid var(--sclr);
+}
+
+#voice-chat {
+ position: absolute;
+ right: 4rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ background: transparent;
+ border: none;
+}
+
+#send-prompt {
+ position: absolute;
+ right: 1.5rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ background: transparent;
+ border: none;
+}
+
+#send-prompt > svg,
+#voice-chat > svg {
+ width: 1.8rem;
+ height: 1.8rem;
+ transition: .6s;
+}
+
+#voice-chat:hover > svg,
+#send-prompt:hover > svg {
+ fill: var(--sclr);
+}
+
+/** chatbot page style rules ends here } **/
+
+
+
+
+
+/** log mood page style rules starts here } **/
+
+#mood-option-box {
+ width: 96%;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ padding: 2%;
+ margin-bottom: 1rem;
+}
+
+#mood-option-box > div {
+ width: auto;
+ min-height: 5.2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: .4rem;
+ border: 0.1rem solid transparent;
+ border-radius: .8rem;
+ transition: 400ms;
+}
+
+#mood-option-box > div:hover {
+ border: 0.1rem solid var(--sclr);
+}
+
+#mood-option-box > div > label {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+#mood-option-box > div > label > svg {
+ width: 2rem;
+ height: 2rem;
+}
+
+#mood-option-box > div > label > p {
+ font-size: .8rem;
+ margin-top: 1rem;
+}
+
+#mood-option-box input[type=radio] {
+ display: none;
+}
+
+#current-mood-emoji {
+ width: 90%;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin: 2rem 0;
+}
+
+#current-mood-emoji > svg {
+ width: 7rem;
+ height: 7rem;
+ margin-bottom: 2rem;
+}
+
+#p-quote {
+ width: 90%;
+ height: auto;
+ min-height: 5rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ padding: 2% 5%;
+ background: var(--bg);
+ border-radius: .6rem;
+}
+
+#tips {
+ align-self: flex-start;
+ width: 100%;
+ margin-left: .2rem;
+}
+
+#tips > li {
+ margin: .6rem;
+}
+
+#tips > li::marker {
+ color: var(--sclr);
+}
+/**log mood page style rules ends here } **/
+
+
+
+
+
+
+/** animations keyframes **/
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+@keyframes elastic {
+ 50% {
+  width: 7rem;
+ }
+}
+
+
+
+
+
+
+
+/** media queries for responsiveness **/
+
+@media (min-width: 726px) {
+ main {
+  width: 100vw; 
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+ }
+ 
+ aside {
+  width: 14rem;
+  height: 100vh;
+  position: relative;
+  display: block;
+  z-index: 2;
+ }
+ 
+ aside > ul {
+  width: 14rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--shade);
+  list-style: none;
+ }
+ 
+ aside > ul > li {
+  width: auto;
+  min-width: 60%;
+  height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3% 5%;
+  border-radius: .6rem;
+  margin: 1rem;
+  transition: 400ms;
+ }
+ 
+ aside > ul > li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+ }
+ 
+ aside > a:visited {
+  color: var(--clr);
+ }
+ 
+ aside > ul > li svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: .2rem;
+  margin-right: .8rem;
+ }
+ 
+  aside > ul > li:hover,
+  aside > ul > li:hover svg {
+  fill: var(--sclr);
+  background: rgba(68, 56, 208, 0.2);
+ }
+ 
+ .group {
+  width: 75%;
+ }
+ 
+ #prompt-input {
+  padding: 0.5rem 8rem 0.5rem 2rem;
+ }
+ #voice-chat {
+  right: 6rem;
+ }
+ #send-prompt {
+  right: 2.4rem;
+ }
+ 
+ footer {
+  display: none;
+ }
+}
