@@ -4,6 +4,9 @@
 import { getElement } from '../view/getElement.js';
 import { copyText } from '../view/copyText.js';
 import { speakText } from '../view/tts.js';
+import { fetchJson } from '../model/fetchJson.js';
+
+
 
 // selecting elements 
 const introScreen = getElement('intro-screen', 'id');
@@ -11,6 +14,7 @@ const dailyAffirmText = getElement('daily-affirm-text', 'id');
 const copyAffirmBtn = getElement('copy-affirm-btn', 'id');
 const speakAffirmBtn = getElement('speak-affirm-btn', 'id');
 const showRelaxTracks = getElement('show-relax-tracks', 'id');
+
 
 
 
@@ -24,6 +28,18 @@ window.onload = () => {
 };
 
 
+// function to set random affirmation 
+const setAffirm = () => {
+ const path = '/src/assets/json/affirms.json';
+ 
+ fetchJson(`${path}`)
+ .then(affirm => {
+   dailyAffirmText.textContent = affirm;
+ });
+}
+setAffirm();
+
+
 // event listener to copy daily affirmation
 copyAffirmBtn.addEventListener('click', () => {
   copyText(dailyAffirmText);
@@ -35,6 +51,8 @@ speakAffirmBtn.addEventListener('click', () => {
   speakText('daily-affirm-text');
 });
 
+
+// event listener to show all relaxation tracks
 showRelaxTracks.addEventListener('click', () => {
   alert('working');
 });
