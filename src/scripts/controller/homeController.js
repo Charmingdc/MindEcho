@@ -5,6 +5,7 @@ import { getElement } from '../view/getElement.js';
 import { copyText } from '../view/copyText.js';
 import { speakText } from '../view/tts.js';
 import { fetchJson } from '../model/fetchJson.js';
+import { writeToElement } from '../view/writeToElement.js';
 
 
 
@@ -34,7 +35,7 @@ const setAffirm = () => {
  
  fetchJson(`${path}`)
  .then(affirm => {
-   dailyAffirmText.textContent = affirm;
+   writeToElement('daily-affirm-text', affirm);
  });
 }
 setAffirm();
