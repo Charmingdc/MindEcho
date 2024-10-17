@@ -197,7 +197,7 @@ aside {
 }
 
 #intro-screen > h3 {
- position: absolute;
+ position: fixed;
  bottom: 2rem;
  color: var(--sclr);
 }
