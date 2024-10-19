@@ -188,9 +188,9 @@ aside {
  z-index: 5;
 }
 
-#intro-screen > div {
- width: 8rem;
- height: 8rem;
+#intro-screen > img {
+ width: 7rem;
+ height: 7rem;
  background-color: var(--shade);
  border-radius: 50%;
  margin-top: -2rem;
