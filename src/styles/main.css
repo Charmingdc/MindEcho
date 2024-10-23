@@ -202,6 +202,57 @@ aside {
  color: var(--sclr);
 }
 
+#tracks-container {
+ width: 100vw;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ bottom: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ overflow-y: auto;
+ background-color: var(--shade);
+ z-index: 4;
+}
+
+#track-cats {
+ width: 100vw;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#track-cats > li {
+ width: 92%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 4%;
+ list-style: none;
+ border: 0.1rem solid var(--shade);
+}
+
+#track-cats > li > h2 {
+ align-self: flex-start;
+ margin-left: .4rem;
+}
+
+.tracks-box-wrapper {
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.tracks-box-wrapper > div {
+ width: 8rem;
+ height: 10rem;
+ padding: 1rem;
+ background-color: var(--bg);
+ border-radius: .6rem;
+ margin: .8rem .4rem;
+}
+
 #index-profile-detail {
  width: 90%;
  height: auto;

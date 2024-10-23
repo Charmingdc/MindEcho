@@ -4,7 +4,7 @@
 import { getElement } from '../view/getElement.js';
 import { copyText } from '../view/copyText.js';
 import { speakText } from '../view/tts.js';
-import { fetchJson } from '../model/fetchJson.js';
+import { fetchApi } from '../model/fetchApi.js';
 import { writeToElement } from '../view/writeToElement.js';
 
 
@@ -15,7 +15,8 @@ const dailyAffirmText = getElement('daily-affirm-text', 'id');
 const copyAffirmBtn = getElement('copy-affirm-btn', 'id');
 const speakAffirmBtn = getElement('speak-affirm-btn', 'id');
 const showRelaxTracks = getElement('show-relax-tracks', 'id');
-
+const tracksContainer  = getElement('tracks-container', 'id');
+const closeTrackCont = getElement('close-tracks-cont', 'id');
 
 
 
@@ -25,7 +26,7 @@ const showRelaxTracks = getElement('show-relax-tracks', 'id');
 window.onload = () => {
   setTimeout(() => {
     introScreen.style.display = 'none';
-  }, 2000);
+  }, 1000);
 };
 
 
@@ -33,9 +34,12 @@ window.onload = () => {
 const setAffirm = () => {
  const path = '/src/assets/json/affirms.json';
  
- fetchJson(`${path}`)
- .then(affirm => {
-   writeToElement('daily-affirm-text', affirm);
+ fetchApi(`${path}`)
+ .then(data => {
+   const affirm = data.affirmations; // get all affirmatios
+   const randomIndex = Math.floor(Math.random() * affirm.length); // created a random index
+   const randomAffirm = affirm[randomIndex]; // get affirmations randomly 
+   writeToElement('daily-affirm-text', randomAffirm); // display affirmation to the UI
  });
 }
 setAffirm();
@@ -53,7 +57,12 @@ speakAffirmBtn.addEventListener('click', () => {
 });
 
 
-// event listener to show all relaxation tracks
+// event listener to show relaxation tracks container 
 showRelaxTracks.addEventListener('click', () => {
-  alert('working');
+  tracksContainer.style.display = 'flex';
+});
+
+// event listener to hide relaxation tracks container 
+closeTrackCont.addEventListener('click', () => {
+  tracksContainer.style.display = 'none';
 });
