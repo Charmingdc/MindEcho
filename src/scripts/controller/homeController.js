@@ -6,7 +6,8 @@ import { copyText } from '../view/copyText.js';
 import { speakText } from '../view/tts.js';
 import { fetchApi } from '../model/fetchApi.js';
 import { writeToElement } from '../view/writeToElement.js';
-import { showTracks } from '../view/showTracks.js';
+import { updateTrackList } from '../view/updateTrackList.js';
+import { playTrack } from '../model/playTrack.js';
 
 
 
@@ -33,12 +34,11 @@ window.onload = () => {
   
 
 
-  const fetchTracks = () => {
+  const fetchTracks = async () => {
    const path = 'https://raw.githubusercontent.com/Charmingdc/Relaxation-tracks/main/src/moods.json';
    
    fetchApi(`${path}`)
    .then(data => {
-
      const moodArray = data.moods; // set all moods to a variable
 
      // loop through all moods
@@ -51,7 +51,7 @@ window.onload = () => {
       li.appendChild(h2);
       trackCats.appendChild(li);
       
-      showTracks(mood, li); // call the showTracks function to display all tracks under their categories 
+      updateTrackList(mood, li, playTrack);// call the showTracks function to display all tracks under their categories 
 
      });
 
@@ -62,7 +62,7 @@ window.onload = () => {
 
 
 // function to set random affirmation 
-const setAffirm = () => {
+const setAffirm = async () => {
  const path = '/src/assets/json/affirms.json';
  
  fetchApi(`${path}`)
@@ -74,6 +74,7 @@ const setAffirm = () => {
  });
 }
 setAffirm();
+
 
 
 // event listener to copy daily affirmation
