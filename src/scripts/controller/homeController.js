@@ -61,8 +61,15 @@ window.onload = () => {
         const trackName = document.createElement('h3');
         trackName.textContent = track.name; // created a h3 header and set track name as its text
 
+        const trackMin = document.createElement('p');
+        const audio = new Audio(track.media_url);
+        audio.onloadedmetadata = () => {
+          trackMin.textContent = (audio.duration / 60).toFixed(2);
+        }
+
         const trackInfo = document.createElement('div');
         trackInfo.appendChild(trackName); // created a div for track Infos and append trackName to it
+        trackInfo.appendChild(trackMin);
 
         const trackBox = document.createElement('div');
         trackBox.appendChild(trackDp);
@@ -72,7 +79,7 @@ window.onload = () => {
         trackBoxWrap.classList.add('tracks-box-wrapper');
         trackBoxWrap.appendChild(trackBox);
         
-        li.appendChild(trackBoxWrap)
+        li.appendChild(trackBoxWrap);
       });
 
      });
