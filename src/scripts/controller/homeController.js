@@ -51,10 +51,10 @@ window.onload = () => {
       li.appendChild(h2);
       trackCats.appendChild(li);
       
-      showTracks(mood);
+      showTracks(mood, li); // call the showTracks function to display all tracks under their categories 
 
      });
-     
+
    });
   }
   fetchTracks(); // function to fetch and display tracks by categories 

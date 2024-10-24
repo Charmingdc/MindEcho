@@ -1,6 +1,6 @@
 'use strict';
 
-export const showTracks = (mood) => {
+export const showTracks = (mood, category) => {
   
   // loop through all moods tracks
       mood.tracks.forEach(track => {
@@ -30,6 +30,6 @@ export const showTracks = (mood) => {
         trackBoxWrap.classList.add('tracks-box-wrapper');
         trackBoxWrap.appendChild(trackBox);
         
-        li.appendChild(trackBoxWrap);
+        category.appendChild(trackBoxWrap);
       });
 }
