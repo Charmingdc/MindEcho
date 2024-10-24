@@ -6,6 +6,7 @@ import { copyText } from '../view/copyText.js';
 import { speakText } from '../view/tts.js';
 import { fetchApi } from '../model/fetchApi.js';
 import { writeToElement } from '../view/writeToElement.js';
+import { showTracks } from '../view/showTracks.js';
 
 
 
@@ -50,7 +51,10 @@ window.onload = () => {
       li.appendChild(h2);
       trackCats.appendChild(li);
       
+      showTracks(mood);
+
      });
+     
    });
   }
   fetchTracks(); // function to fetch and display tracks by categories 
