@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Adebayo Muis, Charmingdc">
+  <meta name="keywords" content="MindEcho, Mental support, mental health, ai mental coach, mood logging, personalized quotes, healthier you, insightful resources, emotional journey">
+  <meta name="description" content="MindEcho empowers your emotional journey with mood logging, personalized quotes, and insightful resources for a happier, healthier you.">
+  
+    <!-- Add favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/mindecho.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/mindecho.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/mindecho.png">
+  <link rel="mask-icon" href="/public/mindecho.png" color="rgb(24, 29, 34)">
+  
+  
+      <!-- ScrollJs cdn link -->
+  <script src="https://cdn.jsdelivr.net/gh/Charmingdc/ScrollJs@main/scroll.min.js" defer></script>
+  
+  
+   <!-- link to import font awesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- link to css stylesheet -->
+  <link rel="stylesheet" href="./src/styles/index.css">
+ 
+  <!-- Imported Poppins font from Google fonts -->
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+  
+  <title>
+   MindEcho - Be Happier
+  </title>
+ </head>
+ <body id="bdy">
+   <div id="particle-js"></div>
+   <header>
+     <nav>
+       <ul id="navbar">
+         <li>
+           <h2>
+             MindEcho
+           </h2>
+         </li>
+         <li>
+           <button id="menu-toggle">
+             <i class="fa-solid fa-navicon" id="menu-toggle-icon"></i>
+           </button>
+         </li>
+       </ul>
+     </nav>
+     
+     <ul class="menu">
+      <li>
+       <a href="/src/auth/login.html"> Login </a>
+      </li>
+      <li>
+       <a href="/src/auth/signup.html"> Sign Up </a>
+      </li>
+      <li>
+       <a href="#features"> Features </a>
+      </li>
+      <li>
+       <a href="#contact"> Contact </a>
+      </li>
+     </ul>
+   </header>
+   
+   
+   
+   <main>
+    <section id="hero">
+      <div>
+        <h1 class="slideup-anim">
+          Embrace a life of calm and clarity 
+        </h1>
+        
+        <p class="slideup-anim">
+         Your journey to discover your inner peace starts here
+        </p>
+        
+        <div class="cta-button-wrap">
+         <a href="/src/auth/login.html" class="slideup-anim" id="login-cta">
+           Login
+         </a>
+         
+         <a href="/src/auth/signup.html" class="slideup-anim" id="signup-cta">
+           Sign Up
+         </a>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    <section id="about">
+     <div>
+      <h1 class="slideup-anim">
+       Feeling too overwhelmed?
+      </h1>
+      
+      <p class="slideup-anim">
+        MindEcho offers simple, effective tools for practicing mindfulness and improving mental clarity. Discover a helpful AI virtual therapist, mood insights and soundscapes to help you reduce stress. Take the first step towards a peaceful mind today.
+      </p>
+     </div>
+     
+     <div class="slideup-anim">
+      <img src="/public/assets/imgs/young-and-happy-bro.png">
+     </div>
+    </section>
+    
+    
+    <section id="features">
+      <h2 class="tag">
+        Highlighted Features
+      </h2>
+      
+      
+      <div class="features-container">
+       <div class="feature-box">
+        <div>
+         <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-envelope-paper-heart-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="m3 7.5 3.5 2L8 8.75l1.5.75 3.5-2v-6A1.5 1.5 0 0 0 11.5 0h-7A1.5 1.5 0 0 0 3 1.5zM2 3.133l-.941.502A2 2 0 0 0 0 5.4v.313l2 1.173zm12 3.753 2-1.173V5.4a2 2 0 0 0-1.059-1.765L14 3.133zm-3.693 3.324L16 6.873v6.5zm5.634 4.274L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516M5.693 10.21 0 13.372v-6.5zM8 1.982C9.664.309 13.825 3.236 8 7 2.175 3.236 6.336.31 8 1.982"/>
+          </svg>
+        </div>
+        
+        <h2>
+         Daily Affirmation
+        </h2>
+        <p>
+         Receive different positive affirmations whenever you log in to MindEcho
+        </p>
+       </div>
+       
+       <div class="feature-box">
+        <div>
+         <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+          <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2"/>
+          <path fill-rule="evenodd" d="M12 3v10h-1V3z"/>
+          <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z"/>
+          <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"/>
+         </svg>
+        </div>
+        
+        <h2>
+         Soundscapes
+        </h2>
+        <p>
+         Curated list of soul calming soundscapes to help you reduce stress
+        </p>
+       </div>
+       
+       <div class="feature-box">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16">
+          <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135"/>
+       <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5"/>
+         </svg>
+        </div>
+        
+        <h2>
+         Virtual AI Therapist
+        </h2>
+        <p>
+         Virtual AI therapist ready to talk to you about your emotional well-being
+        </p>
+       </div>
+       
+       <div class="feature-box">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
+            <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
+         </svg>
+        </div>
+        
+        <h2>
+          Mood Insight
+        </h2>
+        <p>
+         Get graphical representation and insights of your mood entries along with recommended actions
+        </p>
+       </div>
+       
+      </div>
+    </section>
+    
+    
+    
+    <section id="contact">
+      <div>
+       <h1 class="slideup-anim">
+         Contact
+       </h1>
+       
+       <p>
+         Reachout to us at: 
+         <a href="mailto:mindecho@gmail.com"> mindecho@gmail.com </a>
+       </p>
+      </div>
+    </section>
+    
+    
+    <section id="quote">
+      <div>
+       <h1 class="slideup-anim">
+         Everybody deserves to be happy
+       </h1>
+      </div>
+     
+      <div class="slidein-anim">
+       <img src="/public/assets/imgs/happy-people.png">
+      </div>
+    </section>
+   </main>
+   
+   
+   <footer>
+    <p>
+     Built with '♥️' by <a href="">Adebayo Muis</a>
+    </p>
+    
+    <span id="current-year"></span>, MindEcho, Inc
+   </footer>
+   
+   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+   <script src="./index.js" type="module"></script>
+ </body>
+</html>
