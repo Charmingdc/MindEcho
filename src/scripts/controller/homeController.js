@@ -47,7 +47,7 @@ export const initHome = async (app) => {
 
   // function to set random affirmation 
   const setAffirm = async () => {
-    const path = '/public/assets/json/affirms.json';
+    const path = 'https://github.com/Charmingdc/MindEchoTest/blob/c34d736d560d3f76db523c2bd6b8e2ee4908a845/src/assets/jsons/affirms.json';
 
     try {
       const data = await fetchApi(`${path}`)
