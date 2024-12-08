@@ -1,0 +1,195 @@
+/* import general style rules */
+@import './main.css';
+
+
+
+.recent-moods-peek {
+ width: 96%;
+ height: 4rem;
+ display: flex;
+ flex-direction: row-reverse;
+ align-items: center;
+ justify-content: space-evenly;
+ padding: 2%;
+ margin-bottom: 1rem;
+}
+
+.recent-moods-peek > div {
+ width: 3rem;
+ height: 3rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: var(--bg);
+ border-radius: 50%;
+ transition: 200ms;
+}
+.recent-moods-peek > div:hover {
+ color: var(--sclr);
+}
+
+.recent-moods-peek > div svg {
+ height: 1.8rem;
+ width: 1.8rem;
+}
+
+#mood-history {
+ width: 100vw;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ bottom: 0;
+ display: none;
+ flex-direction: column;
+ align-items: center;
+ background: var(--shade);
+ overflow-y: auto;
+ z-index: 20;
+}
+
+#filter-bar {
+ width: 90%;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ text-align: left;
+ padding: 0 5%;
+ margin-bottom: 2rem;
+}
+
+#filter-bar h1 {
+ margin-left: .4rem;
+}
+
+#filter-options {
+ width: 100%;
+ height: auto;
+ display: flex;
+ flex-wrap: wrap;
+ margin-top: 1rem;
+}
+
+#filter-options > input {
+ width: 8rem;
+ height: 2.6rem;
+ color: rgb(140, 140, 140);
+ font-family: 'Poppins', sans-serif;
+ padding: .5rem;
+ background: var(--bg);
+ border: 0.1rem solid var(--bg);
+ border-radius: .6rem;
+ transition: 300ms;
+ margin: .3rem;
+}
+
+#filter-options > input::placeholder {
+  color: rgb(140, 140, 140);
+}
+
+#filter-options > input:focus {
+ outline: none;
+ color: var(--clr);
+ border: 0.1rem solid var(--sclr);
+}
+
+#delete-all-btn {
+ width: 7rem;
+ height: 3rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ align-self: flex-end;
+ color: var(--clr);
+ padding: 1rem;
+ background-color: red;
+ border: none;
+ border-radius: .4rem;
+ margin: 1rem 5% 1rem;
+}
+
+#delete-all-btn svg {
+ margin-right: .4rem;
+}
+
+#mood-history-list {
+ width: 100%;
+ height: auto;
+ display: flex;
+ flex-direction: column-reverse;
+ align-items: center;
+}
+
+#mood-history-list svg {
+ transition: 300ms;
+}
+
+#mood-history-list > li {
+ width: 80%;
+ height: auto;
+ padding: 1rem 5%;
+ list-style: none;
+ background-color: var(--bg);
+ border-radius: .8rem;
+ margin: .4rem 0;
+}
+
+#mood-history-list > li > div {
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ margin-bottom: 1rem;
+}
+
+#mood-history-list > li > div > div {
+ width: 3rem;
+ height: 3rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: var(--shade);
+ border-radius: 50%;
+ transition: 300ms;
+}
+
+#mood-history-list > li > div > div:first-child {
+  width: auto;
+  padding: 0 .8rem;
+  border-radius: 2rem;
+}
+#mood-history-list > li > div > div:first-child svg {
+ width: 2rem;
+ height: 2rem;
+ margin-right: .4rem;
+}
+#mood-history-list > li > div > div:first-child:hover {
+ color: var(--sclr);
+}
+
+#mood-history-list > li > div > div:last-child:hover {
+ background: rgba(255, 0, 0, .2);
+}
+#mood-history-list > li > div > div:last-child:hover svg {
+ color: rgb(255, 0, 0);
+}
+
+
+#mood-chart-box > p,
+#mood-count-box > p,
+#mood-analysis > p {
+ color: rgb(160, 160, 160);
+}
+
+.no-mood {
+ height: 10rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ font-size: 3rem;
+ text-align: center;
+}
+
+#mood-chart {
+ width: 100%;
+}

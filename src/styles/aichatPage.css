@@ -1,0 +1,282 @@
+/* import general styles */
+@import './main.css';
+
+/** { chatbot page style rules starts here } **/
+
+#ai-name {
+ margin-left: .8rem;
+}
+
+#clear-chatbox {
+ margin-right: .6rem;
+}
+
+#ai-body {
+ width: 92%;
+ height: 74vh;
+ padding: 0 4%;
+ color: var(--clr);
+ background: var(--bg);
+}
+
+#ai-body > section {
+ width: 100%;
+ height: 74vh;
+ display: flex;
+ flex-direction: column;
+ overflow-y: auto;
+}
+
+#conversation-box::-webkit-scrollbar {
+ width: .2rem;
+ margin-left: .2rem;
+}
+
+#conversation-box::-webkit-scrollbar-track {
+ background-color: var(--shade);
+ border-radius: .4rem;
+}
+
+#ai-default-screen {
+ width: 100%;
+ height: 80vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-top: -1rem;
+}
+
+#ai-default-screen > img {
+ width: 7rem;
+ height: 7rem;
+ background: var(--shade);
+ border-radius: 50%;
+ margin-bottom: .5rem;
+}
+
+#ai-default-screen > h3 {
+ margin: 0.6rem 0rem;
+}
+
+#ai-default-screen > p {
+ font-size: 0.8rem;
+}
+
+.usr-chat-wrap {
+ align-self: flex-end;
+ width: auto;
+ max-width: 80%;
+ height: auto;
+ font-size: .9rem;
+ padding: .6rem;
+ background: var(--sclr);
+ border-radius: 1rem;
+ margin: 1rem 0rem;
+}
+
+.ai-chat-wrap {
+ align-self: flex-start;
+ width: 90%;
+ height: auto;
+ display: flex;
+ align-items: flex-start;
+ justify-content: flex-start;
+ border-radius: 1rem;
+ margin: 1rem 0rem;
+}
+
+.ai-dp {
+ width: 2.4rem;
+ height: 2.4rem;
+ background-color: var(--shade);
+ background-image: url('/public/assets/imgs/chatbot.png');
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ border: 0.1rem solid var(--shade);
+ border-radius: 50%;
+ margin-right: .8rem;
+}
+
+.ai-chatbox {
+ width: 90%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ margin-top: .6rem;
+}
+
+.ai-chatbox > .ai-chat {
+ width: 100%;
+ height: auto;
+ font-size: .9rem;
+ word-wrap: break-word;
+ word-break: keep-all;
+}
+
+.ai-chat p {
+ margin-bottom: .2rem;
+}
+
+.ai-chat a {
+ color: var(--sclr);
+ text-decoration-line: none;
+ word-wrap: break-word;
+ word-break: keep-all;
+}
+
+.ai-chat h1,
+.ai-chat h2,
+.ai-chat h3,
+.ai-chat h4,
+.ai-chat h5,
+.ai-chat h6 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.ai-chat ul,
+.ai-chat ol {
+ list-style-position: outside;
+ padding-left: 1rem;
+}
+
+.ai-chat li {
+ display: list-item;
+ line-height: 1.5;
+ margin-bottom: 0.5rem;
+}
+
+.ai-chat hr {
+ margin-bottom: .2rem;
+}
+
+.input-container {
+ width: 100%;
+ height: 5rem;
+ position: fixed;
+ bottom: 0%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: var(--bg);
+}
+
+.group {
+  width: 90%;
+  display: flex;
+  line-height: 30px;
+  align-items: center;
+  position: relative;
+}
+
+#prompt-input {
+  width: 100%;
+  height: 2.7rem;
+  padding: 0.5rem 5.6rem 0.5rem 1rem;
+  color: var(--clr);
+  font-family: 'Poppins', Sans-Serif;
+  background-color: var(--shade);
+  border: 0.1rem solid transparent;
+  border-radius: 2rem;
+  transition: .8s ease;
+  margin: 1rem 0rem;
+}
+
+#prompt-input::placeholder {
+  color: rgb(80, 80, 80);
+}
+
+#prompt-input:focus, #prompt-input:hover {
+  outline: none;
+  background-color: var(--bg);
+  border: 0.1rem solid var(--sclr);
+}
+
+#speech-to-textbtn {
+ position: absolute;
+ right: 4rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ background: transparent;
+ border: none;
+}
+
+#send-prompt {
+ position: absolute;
+ right: 1.5rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ background: transparent;
+ border: none;
+}
+
+#send-prompt > svg,
+#speech-to-textbtn > svg {
+ width: 1.8rem;
+ height: 1.8rem;
+ transition: .6s;
+}
+
+#speech-to-textbtn:hover > svg,
+#send-prompt:hover > svg {
+ fill: var(--sclr);
+}
+
+.spinner svg {
+  animation: spin 1s linear infinite;
+}
+
+#scroll-button {
+ width: 3rem;
+ height: 3rem;
+ position: fixed;
+ bottom: 10%;  
+ display: none;
+ align-items: center;
+ justify-content: center;
+ background: var(--shade);
+ border-radius: 50%;
+}
+
+#scroll-button svg {
+ width: 2rem;
+ height: 2rem;
+}
+
+#scroll-button:hover svg {
+ fill: var(--sclr);
+}
+
+.listening {
+ width: 4.6rem;
+ height: 2.2rem;
+ position: fixed;
+ top: 8%;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ padding: 0.2rem;
+ opacity: 0;
+ background-color: var(--shade);
+ border-radius: 3rem;
+ transition: 400ms;
+}
+
+.listening svg {
+ width: 1.4rem;
+ height: 1.4rem;
+ transition: 400ms;
+}
+
+.now-listening {
+ width: 8.6rem;
+ opacity: 1;
+}
+
+/** chatbot page style rules ends here } **/

@@ -1,0 +1,197 @@
+/* import general style rules */
+@import './main.css';
+
+
+/** log mood page style rules starts here } **/
+
+#mood-option-box {
+ width: 96%;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ padding: 2%;
+ margin-bottom: 1rem;
+}
+
+#mood-option-box > div > label {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ transition: 400ms;
+}
+
+#mood-option-box > div:hover > label {
+ color: var(--sclr);
+ transform: translateY(-.6rem);
+}
+
+#mood-option-box > div > label > svg {
+ width: 2rem;
+ height: 2rem;
+}
+
+#mood-option-box > div > label > p {
+ font-size: .8rem;
+ margin-top: 1rem;
+}
+
+#mood-option-box input[type=radio] {
+ display: none;
+}
+
+#current-mood-emoji {
+ width: 90%;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin: 2rem 0 1rem 0;
+}
+#current-mood-emoji + h2 {
+  text-transform: uppercase;
+ margin-bottom: 2rem;
+}
+
+#current-mood-emoji > svg {
+ width: 7rem;
+ height: 7rem;
+ margin-bottom: 1rem;
+}
+
+#p-quote {
+ width: 90%;
+ height: auto;
+ min-height: 5rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ padding: 2% 5%;
+ background: var(--bg);
+ border-radius: .6rem;
+}
+
+#quote-error-div {
+ display: none;
+}
+
+#daily-music-box {
+ width: 96%;
+ height: 8rem;
+ display: grid;
+ grid-template-rows: 1fr;
+ grid-template-columns: repeat(2, 1fr);
+ grid-gap: .4rem;
+ padding: 2%;
+ background: var(--bg);
+ border-radius: .6rem;
+}
+
+#daily-music-box > div {
+ height: 100%;
+ border-radius: .4rem;
+}
+
+#daily-music-box > div:first-child {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+#daily-music-box > div:first-child > img {
+ width: 6.5rem;
+}
+
+#daily-music-box > div:last-child {
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+ white-space: nowrap;  box-sizing: border-box;
+ padding-left: .6rem;
+ background: var(--shade);
+}
+
+#daily-music-box > div:last-child > h4 {
+ display: inline-block;
+ animation: marquee 10s linear infinite;
+}
+    
+#daily-music-box > div:last-child > p {
+ font-weight: bold;
+ margin-top: .4rem;
+}
+
+#daily-music-box > div:last-child > button {
+ position: absolute;
+ bottom: 8%;
+ width: 6.4rem;
+ height: 2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ background: var(--sclr);
+ border: none;
+ border-radius: 1rem;
+}
+
+#daily-music-box > div:last-child > button:hover {
+ animation: elastic 400ms linear;
+}
+
+#daily-music-box > div:last-child > button > i {
+ margin-right: .4rem;
+}
+
+#track-error-div {
+ display: none;
+}
+
+#tips {
+ align-self: flex-start;
+ width: 100%;
+ margin-left: .2rem;
+}
+
+#tips > li {
+ margin: .6rem;
+}
+
+#tips > li::marker {
+ color: var(--sclr);
+}
+
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.loader {
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: #0071e2;
+  width: 130px;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+  margin-top: 1rem;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+  ;
+}
+
+/**log mood page style rules ends here } **/

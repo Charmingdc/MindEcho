@@ -1,0 +1,568 @@
+/** importing styles **/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/** universal style rules **/
+* {
+ padding: 0;
+ margin: 0;
+}
+
+/** css variables for dark mode **/
+.default-mode {
+ --clr: rgb(200, 200, 200);
+ --sclr: rgb(68, 56, 208);
+ --bg: rgb(13, 13, 13);
+ --shade: rgb(18, 18, 18);
+ --bg-translucent: rgba(13, 13, 13, 0.5);
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+body {
+ width: 100vw;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: 'Poppins', Sans-Serif;
+ color: var(--clr);
+ background: var(--bg);
+}
+
+a,
+a:hover,
+a:visited {
+ color: var(--clr);
+ text-decoration-color: none;
+}
+
+main {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-bottom: 4rem;
+}
+
+aside {
+ display: none;
+}
+
+#intro-screen,
+#loading-screen {
+ width: 100vw;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ bottom: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background-color: var(--bg);
+ z-index: 5;
+}
+
+#intro-screen > img {
+ width: 6rem;
+ height: 6rem;
+ background-color: var(--shade);
+ border-radius: 50%;
+ margin-top: -2rem;
+}
+
+#intro-screen > h3 {
+ position: fixed;
+ bottom: 2rem;
+ color: var(--sclr);
+}
+
+#loading-screen {
+ display: none;
+ background: var(--bg-translucent);
+ z-index: 30;
+}
+#loading-screen > div {
+ width: 3.5rem;
+ height: 3.5rem;
+ background-color: var(--bg-translucent);
+ border: .4rem solid var(--sclr);
+ border-left: .4rem solid transparent;
+ border-radius: 50%;
+ margin-top: -2rem;
+ animation: spin 1s linear infinite;
+}
+
+
+
+/** main content container style rules **/
+.container {
+ width: 100%;
+ min-height: 90vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: var(--bg);
+ margin-bottom: 5rem;
+}
+
+
+/** style rules for reuseable classes starts here**/
+
+/** style rules for ".box" class name **/
+.box,
+.outline-box {
+ width: 82%;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 4%;
+ background: var(--shade);
+ border-radius: .6rem;
+ margin: .5rem 0;
+}
+
+.outline-box {
+ background: transparent;
+}
+
+.box > p,
+.outline-box > p {
+ align-self: flex-start;
+ font-weight: 400;
+ margin-bottom: 1.2rem;
+}
+
+.box > h1,
+.outline-box > h1 {
+ align-self: flex-start;
+}
+
+.box > h3 {
+ align-self: center;
+ text-align: center;
+ margin: .4rem 0;
+}
+
+.outline-box > p:first-child {
+ font-size: 1.2rem;
+ text-transform: uppercase;
+ margin-left: -5%
+}
+
+.box-icon {
+ align-self: flex-start;
+ height: 3rem;
+ display: flex;
+ align-items: center;
+ margin-bottom: 1rem;
+}
+
+.box-icon svg {
+ fill: var(--clr);
+ transition: 400ms;
+ margin-right: 1.4rem;
+}
+
+.box-icon svg:hover {
+ fill: var(--sclr);
+}
+
+.box + ul,
+.outline-box + ul {
+ width: 96%;
+ display: flex;
+ justify-content: space-between;
+ list-style: none;
+ margin-bottom: 1rem;
+}
+
+.box + ul svg,
+.outline-box + ul svg {
+ transition: 400ms;
+}
+
+.box > ul svg:hover,
+.outline-box > ul svg:hover {
+ fill: var(--sclr);
+}
+
+/** style rules for ".page-top-bar" class **/
+.page-topbar {
+ width: 90%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 1rem 5%;
+ list-style: none;
+ margin-bottom: 1rem;
+}
+
+.page-topbar > li,
+.page-topbar a {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.page-topbar > li svg {
+ width: 1.4rem;
+ height: 1.4rem;
+}
+
+.page-topbar > li > h2 {
+ color: var(--sclr);
+}
+
+/** style rules for ".btn" class **/
+.btn,
+.view-all-btn {
+ width: 96%;
+ height: 3.2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ font-size: .9rem;
+ font-family: 'Poppins', Sans-Serif;
+ text-decoration: none;
+ background-color: var(--sclr);
+ border: 0.1rem solid transparent;
+ border-radius: 2rem;
+ margin: .5rem 0rem;
+}
+
+.btn > svg {
+ margin-right: .6rem;
+}
+
+.view-all-btn {
+ height: 3rem;
+ background: var(--bg);
+}
+
+.subtag {
+ font-size: .8rem;
+ margin-top: -.6rem;
+}
+
+#loader {
+ width: 5rem;
+ height: 4px;
+ display: block;
+ position: fixed;
+ bottom: 4rem;
+ --loader-color: #0071e2;
+ border-radius: 30px;
+ background-color: rgba(0,0,0,0.2);
+ margin-top: 1rem; 
+}
+
+#loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+}
+
+.scroll-up {
+ width: 2.4rem;
+ height: 2.4rem;
+ position: fixed;
+ bottom: 2rem;
+ right: 5%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-decoration: none;
+ cursor: none;
+ background: var(--bg);
+ border: 0.2rem double var(--sclr);
+ border-radius: 50%;
+}
+.scroll-up svg {
+ width: 1.4rem;
+ height: 1.4rem;
+ border-radius: 50%;
+}
+
+.verify-action-modal {
+ width: 78vw;
+ height: auto;
+ position: fixed;
+ top: 4rem;
+ left: 50%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ padding: 1rem;
+ background: var(--bg);
+ border: 0.2rem double var(--shade);
+ border-radius: 0.8rem;
+ transform: translateX(-50%);
+ z-index: 25;
+}
+
+.verify-action-modal > div {
+ width: auto;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-evenly;
+ margin-top: 2rem;
+}
+
+.verify-action-modal > div > button {
+ width: auto;
+ min-width: 6rem;
+ height: 3rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 1rem;
+ color: var(--clr);
+ font-family: 'Poppins', sans-serif;
+ background: var(--shade);
+ border: 0.1rem solid var(--shade);
+ border-radius: 0.4rem;
+ transition: 200ms;
+ margin: 0 1rem;
+}
+
+.verify-action-modal > div > button:first-child {
+ background: red;
+ border: 0.1rem solid red;
+}
+/** style rules for reusable classes ends here **/
+
+
+
+/** footer style rules starts here **/
+footer {
+ width: 100%;
+ height: auto;
+ position: fixed;
+ bottom: 0%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: var(--shade);
+ border-top-left-radius: 1.4rem;
+ border-top-right-radius: 1.4rem;
+}
+
+/** style rules for ul tag for nav icons **/
+
+footer > ul {
+ width: 100%;
+ height: auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ padding: .2rem 0rem;
+}
+
+footer > ul > li {
+ width: 3rem;
+ height: 3rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ list-style: none;
+}
+
+footer > ul > li:hover > a {
+ color: var(--sclr);
+}
+
+/** special style rules for the third li child **/
+footer > ul > li:nth-child(3) {
+ padding: .4rem;
+ background: var(--clr);
+ border: .6rem solid var(--bg);
+ border-radius: 50%;
+ transform: translateY(-2.4rem);
+ transition: 200ms;
+}
+
+footer > ul > li:nth-child(3):hover {
+ background: var(--sclr);
+}
+
+footer > ul > li > a {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ text-decoration: none;
+}
+
+footer > ul > li > a p {
+ font-size: 0.7rem;
+ margin-top: .4rem;
+}
+
+/** style rules for svg icons **/
+footer > ul > li svg {
+ width: 1.6rem;
+ height: 1.6rem;
+ transition: 200ms;
+}
+
+footer > ul > li:nth-child(3) svg {
+ fill: var(--bg);
+}
+/** footer style rules ends here **/
+
+
+
+
+
+/** animations keyframes **/
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes elastic {
+ 50% {
+  width: 7rem;
+ }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
+
+@keyframes blink {
+  50% {
+    background: var(--bg);
+  }
+}
+
+
+
+/** media queries for responsiveness **/
+
+@media (min-width: 728px) {
+ main {
+  width: 100vw; 
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  margin-bottom: 0;
+ }
+ 
+ aside {
+  width: 12rem;
+  height: 100vh;
+  position: relative;
+  display: block;
+  z-index: 2;
+ }
+ 
+ aside > ul {
+  width: 12rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--shade);
+  list-style: none;
+ }
+ 
+ aside > ul > li {
+  width: auto;
+  min-width: 60%;
+  height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3% 5%;
+  border-radius: .6rem;
+  margin: 1rem;
+  transition: 400ms;
+ }
+ 
+ aside > ul > li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+ }
+ 
+ aside > a:visited {
+  color: var(--clr);
+ }
+ 
+ aside > ul > li svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: .2rem;
+  margin-right: .8rem;
+ }
+ 
+  aside > ul > li:hover,
+  aside > ul > li:hover svg {
+  fill: var(--sclr);
+  background: rgba(68, 56, 208, 0.2);
+ }
+ 
+ .group {
+  width: 75%;
+ }
+ 
+ #prompt-input {
+  padding: 0.5rem 8rem 0.5rem 2rem;
+ }
+ #speech-to-textbtn {
+  right: 6rem;
+ }
+ #send-prompt {
+  right: 2.4rem;
+ }
+ 
+ footer {
+  display: none;
+ }
+}
