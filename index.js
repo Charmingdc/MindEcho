@@ -20,7 +20,7 @@ window.onload = () => {
   
   
   /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-   particlesJS.load('particle-js', '/public/assets/json/particles.json');
+   particlesJS.load('particle-js', '/src/assets/jsons/particles.json');
 };
 
 
