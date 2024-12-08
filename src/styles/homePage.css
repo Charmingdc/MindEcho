@@ -16,7 +16,6 @@
  align-items: center;
  overflow-y: auto;
  background-color: var(--shade);
- background-image: url('/public/assets/imgs/universe.jpeg');
  background-size: cover;
  background-repeat: no-repeat; 
  z-index: 4;
@@ -122,7 +121,7 @@
  width: 3.8rem;
  height: 3.8rem;
  background-color: var(--bg);
- background-image: url('/public/assets/imgs/meditate.png');
+ background-image: url('https://raw.githubusercontent.com/Charmingdc/MindEchoTest/meditate.png');
  background-position: center;
  background-size: cover;
  border-radius: 50%;

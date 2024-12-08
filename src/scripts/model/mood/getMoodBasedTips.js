@@ -5,7 +5,7 @@ import { fetchApi } from '../utils/fetchApi.js';
 
 export const getMoodBasedTips = async (selectedMood) => {
   
-  const url = '/public/assets/json/moodsTips.json';
+  const url = 'https://raw.githubusercontent.com/Charmingdc/MindEchoTest/main/src/assets/jsons/moodTips.json';
   
   let moodBasedTips;
   let mood = selectedMood; // set copy selectedMood to mood variable 

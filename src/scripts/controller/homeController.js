@@ -47,10 +47,11 @@ export const initHome = async (app) => {
 
   // function to set random affirmation 
   const setAffirm = async () => {
-    const path = 'https://github.com/Charmingdc/MindEchoTest/blob/c34d736d560d3f76db523c2bd6b8e2ee4908a845/src/assets/jsons/affirms.json';
+    const path = 'https://raw.githubusercontent.com/Charmingdc/MindEchoTest/main/src/assets/jsons/affirms.json';
 
     try {
       const data = await fetchApi(`${path}`)
+   
       showAffirm(data); // called the function to display affirmation to the UI
     } catch (err) {
       console.error('Failed to show affirmation:', err.message);
