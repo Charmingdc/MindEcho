@@ -1,0 +1,169 @@
+* {
+ margin: 0rem;
+ padding: 0rem;
+ outline: none;
+ font-family: 'Poppins', Sans-Serif;
+}
+
+:root {
+ --clr: rgb(220, 220, 240);
+ --sclr: rgb(68, 56, 208);
+ --bg: rgb(8, 8, 8);
+ --shade: rgb(16, 16, 16);
+}
+
+a {
+ color: var(--sclr);
+ cursor: pointer;
+ text-decoration: none;
+ margin-top: 1rem;
+}
+
+body {
+ width: 100vw;
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(--clr);
+ background: var(--bg);
+}
+
+main {
+ width: 100%;
+ min-height: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+section {
+ width: 94%;
+ min-height: 100%;
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0% 3%;
+ background: var(--bg);
+ transform: translate(-50%, -50%);
+ z-index: 0;
+}
+
+form {
+ width: 19rem;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+form > h1 {
+ color: var(--sclr);
+ align-self: flex-start
+}
+
+form > h1 + p {
+ align-self: flex-start;
+ margin-top: .4rem;
+ margin-bottom: 2rem;
+}
+
+.group {
+  width: 100%;
+  display: flex;
+  line-height: 30px;
+  align-items: center;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: 2.7rem;
+  line-height: 30px;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  border: 0.1rem solid transparent;
+  border-radius: 2rem;
+  color: var(--clr);
+  background-color: var(--shade);
+  transition: .5s ease;
+  margin: .8rem 0rem;
+}
+
+.input::placeholder {
+  color: rgb(120, 120, 120);
+}
+
+.input:focus, input:hover {
+  outline: none;
+  background-color: var(--bg);
+  box-shadow: 0 0 0 5px rgb(68 56 208 / 30%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+
+.psw-toggle {
+ position: absolute;
+ right: 1rem;
+ width: 1rem;
+ height: 1rem;
+}
+
+.button,
+.disabled {
+ width: 100%;  
+ height: 3.7rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ line-height: 30px;
+ padding: 0.5rem 3rem 0.5rem 3rem;
+ color: var(--clr);
+ background-color: var(--sclr);
+ border: 0.2rem double var(--bg);
+ border-radius: 2rem;
+ transition: .2s;
+ margin: 1.8rem 0rem 2rem 0rem;
+}
+
+.disabled {
+ background-color: rgba(68, 56, 208, 0.5);
+ transition: 200ms;
+}
+
+.my-notify {
+ position: fixed;
+ top: 4%;
+ right: 8%;
+ height: auto;
+ background-color: var(--shade);
+ padding: 0.5rem;
+}
+
+/* From Uiverse.io by Fernando-sv */ 
+.loader {
+ border: 4px solid rgba(0, 0, 0, .4);
+ border-left-color: transparent;
+ border-radius: 50%;
+ width: 1.2rem;
+ height: 1.2rem;
+ animation: spin89345 1s linear infinite;
+}
+
+@keyframes spin89345 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

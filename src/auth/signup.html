@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Adebayo Muis, Charmingdc">
+  <meta name="keywords" content="MindEcho, Mental support, mental health, ai mental coach, mood logging, personalized quotes, healthier you, insightful resources, emotional journey">
+  <meta name="description" content="MindEcho empowers your emotional journey with mood logging, personalized quotes, and insightful resources for a happier, healthier you.">
+  
+    <!-- Add favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/mindecho.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/mindecho.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/mindecho.png">
+  <link rel="mask-icon" href="/public/mindecho.png" color="rgb(24, 29, 34)">
+  
+  
+   <!-- link to import font awesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  
+  <!-- Notyf Library CSS  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    
+  
+  <!-- Notyf Library JS -->
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  
+  
+  <!-- link to css stylesheet -->
+  <link rel="stylesheet" href="./styles/style.css">
+ 
+ 
+  <!-- Imported Poppins font from Google fonts -->
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+ 
+  <script src="./entry.js" type="module"></script>
+  <title>
+   MindEcho - Create Account
+  </title>
+ </head>
+ <body>
+  
+  <main>
+   
+   <section>
+     <form id="signup-form">
+      
+       <h1>
+        MindEcho
+       </h1>
+       <p>
+        Embark on your emotional journey 🤗
+       </p>
+      
+       <div class="group">
+         <img src="/public/assets/icons/usr.svg" alt="user icon" class="icon">
+         <input type="text" name="username" placeholder="Enter your unique username" class="input"  id="username">
+       </div>
+       
+       
+       <div class="group">
+         <img src="/public/assets/icons/mail.svg" alt="email icon" class="icon">
+         <input type="email" name="email" placeholder="Enter a valid email" class="input"  id="email">
+       </div>
+       
+       
+        <div class="group">
+         <img src="/public/assets/icons/lock.svg" alt="lock icon" class="icon">
+         <input type="password" name="password" placeholder="Enter your password" class="input" id="password">
+          <i class="fa-regular fa-eye psw-toggle" id="psw-toggle"></i>
+       </div>
+       
+       <button id="submit-btn" class="disabled">
+         Sign Up
+       </button>
+       
+       <p>
+        Already have an account? 
+        <span>
+          <a href="./login.html">
+            Login
+          </a> 
+        </span>
+       </p>
+       
+     </form>
+   </section>
+ 
+   
+  </main>
+  
+ </body>
+</html>
