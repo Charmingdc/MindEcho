@@ -49,7 +49,7 @@ let data;
 
 export const initInsight = async (app) => {
   try {
-
+/*
     const handleTheme = async () => {
       try {
         // retrieving saved from local storage
@@ -62,7 +62,7 @@ export const initInsight = async (app) => {
       }
     };
     handleTheme();
-
+*/
 
     data = await getLoggedMoods(app); // get all logged moods
 
