@@ -1,6 +1,6 @@
 'use strict';
 
-// imported necessary functions
+// imported view functions
 import { notify } from '../view/utils/notify.js';
 import { getElement } from '../view/utils/getElement.js';
 import { createElement } from '../view/utils/createElement.js';
@@ -8,14 +8,17 @@ import { showLoading } from '../view/therapist/showLoading.js';
 import { updateChatBox } from '../view/therapist/updateChatBox.js';
 import { emptyPrompt } from '../view/therapist/emptyPrompt.js';
 import { detectNewMsgs } from '../view/therapist/detectNewMsgs.js';
+import { applyTheme } from '../view/utils/applyTheme.js';
 
+// importing model functions
 import { genAI, model, chat } from '../model/therapist/context.js';
 import { textPrompt } from '../model/therapist/textPrompt.js';
 import { speechToText } from '../model/therapist/speechToText.js';
-
+import { getSavedTheme } from '../model/utils/getSavedTheme.js';
 
 
 // get necessary elements
+const bdy = getElement('bdy', 'id');
 const introScreen = getElement('intro-screen', 'id');
 const promptInput = getElement('prompt-input', 'id');
 const speechToTextBtn = getElement('speech-to-textbtn', 'id');
@@ -34,7 +37,21 @@ userChatWrap.classList.add('usr-chat-wrap');
 
 
 export const initAI = async (app) => {
- 
+  
+  const handleTheme = async () => {
+    try {
+      // retrieving saved from local storage
+      const savedTheme = await getSavedTheme();
+
+      // apply theme
+      await applyTheme(savedTheme, bdy);
+    } catch (err) {
+      console.error('Error applying theme:', err.message);
+    }
+  };
+  handleTheme();
+
+
   setTimeout(() => {
     introScreen.style.display = 'none';
   }, 1000); // hide intro screen after two sec

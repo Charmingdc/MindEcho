@@ -5,6 +5,7 @@ import { getElement } from '../view/utils/getElement.js';
 import { notify } from '../view/utils/notify.js';
 import { showLoader } from '../view/utils/showLoader.js';
 import { displayUserDetails } from '../view/utils/displayUserDetails.js';
+import { applyTheme } from '../view/utils/applyTheme.js';
 
 
 // importing model functions
@@ -13,10 +14,13 @@ import { updateUserDp, updateUsername, updateUserEmail, updateUserPassword } fro
 import { validateEmail, validateUsername, validatePassword } from '../model/setting/validateUpdateInputs.js';
 import { getUserDisplayNameAndDp } from '../model/utils/getUserDisplayNameAndDp.js';
 import { signUserOut } from '../model/setting/signUserOut.js';
+import { getSavedTheme } from '../model/utils/getSavedTheme.js';
+
 
 
 
 // getting dom elements
+const bdy = getElement('bdy', 'id');
 const introScreen = getElement('intro-screen', 'id');
 const loadingScreen = getElement('loading-screen', 'id');
 const userDp = getElement('user-dp', 'class');
@@ -31,6 +35,7 @@ const editUsernameForm = getElement('edit-username-form', 'id');
 const closeUsernameForm = getElement('close-username-form', 'id');
 const usernameInput = getElement('username-input', 'id');
 const saveUsernameBtn = getElement('save-username-btn', 'id');
+const themeSwitch = getElement('theme-switch', 'id');
 const editEmailForm = getElement('edit-email-form', 'id');
 const emailInput = getElement('email-input', 'id');
 const editEmailPswInput = getElement('edit-email-psw-input', 'id');
@@ -46,6 +51,20 @@ const savePswBtn = getElement('save-psw-btn', 'id');
 
 export const initSetting = async (app) => {
   try {
+    const handleTheme = async () => {
+     // retrieving saved from local storage
+      const savedTheme = await getSavedTheme();
+      
+      // apply theme
+      await applyTheme(savedTheme, bdy);
+
+      // check theme switch if the current theme is light theme 
+      if (savedTheme == 'light-mode') {
+        themeSwitch.checked = true;
+      }
+    };
+    handleTheme();
+
 
     const renderUserDetails = async () => {
       try {
@@ -189,7 +208,7 @@ export const initSetting = async (app) => {
 
         if (type === 'success') {
           notify.success(`${text}`);
-          
+
           setTimeout(async () => {
             await signUserOut(app);
           }, 3000); // log user out after 3 seconds
@@ -199,6 +218,22 @@ export const initSetting = async (app) => {
 
       });
     }
+
+
+    const handleThemeChange = async () => {
+      // event listener to toggle theme
+      themeSwitch.addEventListener('click', () => {
+        const currentTheme = bdy.classList.contains('default-mode') ? 'default-mode' : 'light-mode';
+        const newTheme = currentTheme === 'default-mode' ? 'light-mode' : 'default-mode';
+
+        // apply new theme
+        applyTheme(newTheme, bdy);
+
+        // save new theme 
+        localStorage.setItem('MindEcho_theme', newTheme);
+      });
+    }
+    handleThemeChange();
 
 
     const handleEvents = () => {

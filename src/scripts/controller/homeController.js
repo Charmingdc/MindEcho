@@ -5,16 +5,18 @@ import { getElement } from '../view/utils/getElement.js';
 import { updateTrackList } from '../view/home/updateTrackList.js';
 import { showAffirm } from '../view/home/showAffirm.js';
 import { displayUserDetails } from '../view/utils/displayUserDetails.js';
+import { applyTheme } from '../view/utils/applyTheme.js';
 
 // importing model functions
 import { fetchApi } from '../model/utils/fetchApi.js';
 import { playTrack } from '../model/home/playTrack.js';
 import { fetchTracks } from '../model/home/fetchTracks.js'
 import { getUserDisplayNameAndDp } from '../model/utils/getUserDisplayNameAndDp.js';
+import { getSavedTheme } from '../model/utils/getSavedTheme.js';
 
 
-
-// selecting elements 
+// selecting elements
+const bdy = getElement('bdy', 'id');
 const introScreen = getElement('intro-screen', 'id');
 const showRelaxTracks = getElement('show-relax-tracks', 'id');
 const tracksContainer = getElement('tracks-container', 'id');
@@ -28,6 +30,20 @@ const userDp = getElement('user-dp', 'id');
 
 
 export const initHome = async (app) => {
+
+  const handleTheme = async () => {
+    try {
+      // retrieving saved from local storage
+      const savedTheme = await getSavedTheme();
+
+      // apply theme
+      await applyTheme(savedTheme, bdy);
+    } catch (err) {
+      console.error('Error applying theme:', err.message);
+    }
+  };
+  handleTheme();
+
 
   const handleTracks = async () => {
     const moodArray = await fetchTracks();
@@ -51,7 +67,7 @@ export const initHome = async (app) => {
 
     try {
       const data = await fetchApi(`${path}`)
-   
+
       showAffirm(data); // called the function to display affirmation to the UI
     } catch (err) {
       console.error('Failed to show affirmation:', err.message);

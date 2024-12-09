@@ -15,6 +15,7 @@ import { displayChartError } from '../view/insight/displayChartError.js';
 import { renderMoodAnalysis } from '../view/insight/renderMoodAnalysis.js';
 import { verifyAction } from '../view/utils/verifyAction.js';
 import { showLoader } from '../view/utils/showLoader.js';
+import { applyTheme } from '../view/utils/applyTheme.js';
 
 //model function
 import { getLoggedMoods } from '../model/insight/getLoggedMoods.js';
@@ -24,8 +25,11 @@ import { filterMoods } from '../model/insight/filterMoods.js';
 import { getPieChartData } from '../model/insight/getPieChartData.js';
 import { getLineChartData } from '../model/insight/getLineChartData.js';
 import { getHighestMoodCount } from '../model/insight/getHighestMoodCount.js';
+import { getSavedTheme } from '../model/utils/getSavedTheme.js';
+
 
 // getting elements from html file
+const bdy = getElement('bdy', 'id');
 const introScreen = getElement('intro-screen', 'id');
 const loadingScreen = getElement('loading-screen', 'id');
 const viewHistoryBtn = getElement('view-history', 'id');
@@ -46,25 +50,39 @@ let data;
 export const initInsight = async (app) => {
   try {
 
+    const handleTheme = async () => {
+      try {
+        // retrieving saved from local storage
+        const savedTheme = await getSavedTheme();
+
+        // apply theme
+        await applyTheme(savedTheme, bdy);
+      } catch (err) {
+        console.error('Error applying theme:', err.message);
+      }
+    };
+    handleTheme();
+
+
     data = await getLoggedMoods(app); // get all logged moods
-    
+
     setTimeout(() => {
       introScreen.style.display = 'none';
     }, 1000); // hide intro screen after two sec
-    
-    
-  
+
+
+
     const handleDeleteMood = async (selectedMood) => {
       try {
         const isTrue = await verifyAction(moodHistoryContainer);
         if (!isTrue) return; // if isTrue is false, just return without doing anything 
-        
+
         showLoader(true, loadingScreen);
         // display loader
         data = await deleteMood(app, selectedMood);
         showLoader(false, loadingScreen);
         // hide loader
-        
+
         renderRecentMoods(data);
         renderMoodHistory(data, handleDeleteMood);
         renderMoodCountChart(); // re-render pie chart
@@ -176,12 +194,12 @@ export const initInsight = async (app) => {
       } else {
         const isTrue = await verifyAction(moodHistoryContainer);
         if (!isTrue) return; // if isTrue is false, just return without doing anything 
-        
+
         showLoader(true, loadingScreen);
         data = await deleteAllMoodLogs(app); // delete all mood logs
         showLoader(false, loadingScreen);
-        
-        
+
+
         renderRecentMoods(data); // update recent moods with the latest data
         renderMoodHistory(data, handleDeleteMood); // update mood history with the latest info
         await renderMoodCountChart(); // re-render pie chart

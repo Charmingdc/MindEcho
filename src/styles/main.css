@@ -17,6 +17,14 @@
  --bg-translucent: rgba(13, 13, 13, 0.5);
 }
 
+.light-mode {
+ --clr: rgb(50, 50, 50);
+--sclr: rgb(68, 56, 208);
+--bg: rgb(235, 235, 235);
+--shade: rgb(220, 220, 220);
+--bg-translucent: rgba(245, 245, 245, 0.5);
+}
+
 html {
  scroll-behavior: smooth;
 }

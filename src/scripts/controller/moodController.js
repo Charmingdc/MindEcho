@@ -11,6 +11,7 @@ import { displayCurrentMoodInfo } from '../view/mood/displayCurrentMoodInfo.js';
 import { updatePlayer } from '../view/mood/updateMoodBasedTrackPlayer.js';
 import { showQuote } from '../view/mood/showQuote.js';
 import { listTips } from '../view/mood/listTips.js';
+import { applyTheme } from '../view/utils/applyTheme.js';
 
 //model functions
 import { setLocalStorage, getLocalStorage, wipeLocalStorage } from '../model/utils/localStorageModel.js';
@@ -21,9 +22,11 @@ import { getMoodBasedQuote } from '../model/mood/getMoodBasedQuote.js';
 import { getMoodBasedTips } from '../model/mood/getMoodBasedTips.js';
 import { playTrack } from '../model/mood/playTrack.js';
 import { getFormattedDate } from '../model/utils/getFormattedDate.js';
+import { getSavedTheme } from '../model/utils/getSavedTheme.js';
 
 
 // getting elements from html file
+const bdy = getElement('bdy', 'id');
 const introScreen = getElement('intro-screen', 'id');
 const logMoodBtn = getElement('log-mood-btn', 'id');
 const musicCtrlBtn = getElement('ctrl-btn', 'id');
@@ -52,6 +55,21 @@ loader2.classList.add('loader');
 
 
 export const initMood = async (app) => {
+
+  const handleTheme = async () => {
+    try {
+      // retrieving saved from local storage
+      const savedTheme = await getSavedTheme();
+
+      // apply theme
+      await applyTheme(savedTheme, bdy);
+    } catch (err) {
+      console.error('Error applying theme:', err.message);
+    }
+  };
+  handleTheme();
+
+
   setTimeout(() => {
     introScreen.style.display = 'none';
   }, 1000); // hide intro screen after two sec
@@ -146,10 +164,10 @@ export const initMood = async (app) => {
   const init = async (selectedMood) => {
 
     try {
-      
+
       await saveSelectedMood(selectedMood); // save selected mood
       await saveMoodLogToFirestore(app, selectedMood); // save logged mood to firebase
-      
+
       const date = getFormattedDate(new Date());
       const newMoodObj = {
         mood: selectedMood,
@@ -195,7 +213,7 @@ export const initMood = async (app) => {
 
       setLocalStorage('mindEcho_currentTips', moodBasedTips); // update the mood based tips 
       listTips(moodBasedTips); // list the mood based tips to the UI
-     
+
 
     } catch (error) {
       console.log('Please fix me' + error);
