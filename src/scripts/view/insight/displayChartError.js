@@ -19,7 +19,7 @@ export const displayChartError = (chartBox) => {
   chartBox.style.textAlign = 'center';
 
   // Add no-data message
-  const imgSrc = 'https://raw.githubusercontent.com/Charmingdc/MindEcho/main/src/assets/imgs/no-data-rafiki.png';
+  const imgSrc = '/public/assets/imgs/no-data-rafiki.png';
   chartBox.innerHTML = `
     <h2>No data to render the chart</h2>
     <br>

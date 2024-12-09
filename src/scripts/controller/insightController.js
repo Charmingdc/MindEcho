@@ -24,7 +24,7 @@ import { deleteMood } from '../model/insight/deleteMood.js';
 import { filterMoods } from '../model/insight/filterMoods.js';
 import { getPieChartData } from '../model/insight/getPieChartData.js';
 import { getLineChartData } from '../model/insight/getLineChartData.js';
-import { getHighestMoodCount } from '../model/insight/getHighestMoodCount.js';
+import { getHighestMoodCount } from '../model/Insight/getHighestMoodCount.js';
 import { getSavedTheme } from '../model/utils/getSavedTheme.js';
 
 
@@ -49,7 +49,7 @@ let data;
 
 export const initInsight = async (app) => {
   try {
-/*
+
     const handleTheme = async () => {
       try {
         // retrieving saved from local storage
@@ -62,7 +62,7 @@ export const initInsight = async (app) => {
       }
     };
     handleTheme();
-*/
+
 
     data = await getLoggedMoods(app); // get all logged moods
 
