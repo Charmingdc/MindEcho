@@ -4,7 +4,7 @@ import { getEachMoodCount } from './getEachMoodCount.js';
 
 export const getHighestMoodCount = async (data) => {
   try {
-    if (data.length <= 3) {
+    if (data.length < 3) {
       return {errorText: 'Not enough mood logged data to calculate analysis'};
     }
     

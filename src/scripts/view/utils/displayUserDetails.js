@@ -18,7 +18,7 @@ export const displayUserDetails = async (username, dpUrl, usernameDiv, userDp) =
 
     // Default image if no dpUrl is provided
     if (dpUrl == null) {
-      dpUrl = 'https://raw.githubusercontent.com/Charmingdc/MindEchoTest/main/src/assets/imgs/bunny.jpg';
+      dpUrl = 'https://raw.githubusercontent.com/Charmingdc/MindEcho/main/src/assets/imgs/bunny.jpg';
     } 
 
     // Update display picture

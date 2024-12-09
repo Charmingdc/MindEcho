@@ -90,7 +90,7 @@
  width: 2.4rem;
  height: 2.4rem;
  background-color: var(--shade);
- background-image: url('/public/assets/imgs/chatbot.png');
+ background-image: url('https://raw.githubusercontent.com/Charmingdc/MindEcho/main/src/assets/imgs/chatbot.png');
  background-position: center;
  background-size: cover;
  background-repeat: no-repeat;
